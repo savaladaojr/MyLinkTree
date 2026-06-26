@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap");
+@import "tailwindcss";
+
+:root {
+  --bg-canvas: #010102;
+  --surface-1: #0f1011;
+  --surface-2: #141516;
+  --surface-3: #18191a;
+  --hairline: #23252a;
+  --hairline-strong: #34343a;
+  --color-primary: #5e6ad2;
+  --color-primary-hover: #828fff;
+  --color-primary-focus: #5e69d1;
+  --ink: #f7f8f8;
+  --ink-muted: #d0d6e0;
+  --ink-subtle: #8a8f98;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 20% -20%,
+      rgba(94, 106, 210, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 90% 110%,
+      rgba(94, 106, 210, 0.12),
+      transparent 42%
+    ),
+    var(--bg-canvas);
+  color: var(--ink);
+  font-family: Geist, "Inter Variable", "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: var(--space-md);
+  display: grid;
+  place-items: center;
+}
+
+.content-panel {
+  width: min(100%, 540px);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 21, 22, 0.96) 0%,
+    rgba(15, 16, 17, 0.96) 100%
+  );
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.profile-card {
+  display: grid;
+  gap: var(--space-md);
+  justify-items: center;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+  border: 1px solid var(--hairline-strong);
+  object-fit: cover;
+  background: var(--surface-1);
+}
+
+.profile-name {
+  margin: 0;
+  font-family: "Space Grotesk", Geist, sans-serif;
+  font-size: clamp(1.9rem, 5vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.profile-handle {
+  margin: 0.2rem 0 0;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.profile-bio {
+  margin: 0.6rem 0 0;
+  color: var(--ink-subtle);
+  font-size: 1rem;
+}
+
+.links-grid {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.link-button {
+  width: 100%;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.62rem 0.9rem;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.link-solid {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.link-solid:hover {
+  background: var(--color-primary-hover);
+}
+
+.link-outline {
+  background: transparent;
+  border-color: var(--hairline-strong);
+  color: var(--ink);
+}
+
+.link-soft {
+  background: var(--surface-2);
+  color: var(--ink);
+  border-color: var(--hairline);
+}
+
+.link-button.is-highlighted {
+  box-shadow: 0 0 0 1px rgba(130, 143, 255, 0.42) inset;
+}
+
+.link-button:focus-visible,
+.social-link:focus-visible {
+  outline: 2px solid
+    color-mix(in srgb, var(--color-primary-focus) 65%, white 35%);
+  outline-offset: 2px;
+}
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  border: 1px solid var(--hairline-strong);
+  background: var(--surface-3);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease;
+}
+
+.social-link:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(
+    in srgb,
+    var(--color-primary) 55%,
+    var(--hairline-strong) 45%
+  );
+}
+
+.empty-state {
+  border: 1px dashed var(--hairline-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  color: var(--ink-subtle);
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+}
+
+@media (min-width: 768px) {
+  .page-shell {
+    padding: var(--space-lg);
+  }
+
+  .content-panel {
+    padding: 2.75rem;
+  }
+}
