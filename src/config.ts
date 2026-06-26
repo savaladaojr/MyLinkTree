@@ -5,7 +5,8 @@ const siteConfig: SiteConfig = {
     name: "Sergio de Aguiar Valadão Junior",
     handle: "svcode",
     bio: "Software Engineer | System Analyst | Full stack Developer | Backend Developer | .NET | C# | ASP.NET Core | Blazor | ReactJs | Node.js | JavaScript | TypeScript | SQL Server | PostgreSQL",
-    avatarUrl: "/favicon.svg",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/C4E03AQHUgrM_Qxj4rw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1531326719203?e=1784160000&v=beta&t=FgJh6xKdvFzrWOJV7oqK-rtd3LOTsdZv393JxXS2so8",
   },
   links: [
     {
